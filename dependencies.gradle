@@ -1,7 +1,8 @@
 ext.versions = [
         lifecycle       : '2.4.0',
         adapterDelegates: '4.3.1',
-        dagger          : '2.41'
+        dagger          : '2.41',
+        room     : '2.4.2'
 ]
 
 ext.libs = [
@@ -25,4 +26,9 @@ ext.libs = [
         // Dagger
         dagger                     : "com.google.dagger:dagger:$versions.dagger",
         daggerCompiler             : "com.google.dagger:dagger-compiler:$versions.dagger",
+
+        //Room
+        roomRuntime : "androidx.room:room-runtime:$versions.room)",
+        roomKapt : "androidx.room:room-compiler:$versions.room",
+        roomKtx : "androidx.room:room-ktx:$versions.room",
 ]
