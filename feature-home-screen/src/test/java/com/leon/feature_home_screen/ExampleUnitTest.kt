@@ -1,4 +1,4 @@
-package com.leon.lnotes
+package com.leon.feature_home_screen
 
 import org.junit.Test
 
