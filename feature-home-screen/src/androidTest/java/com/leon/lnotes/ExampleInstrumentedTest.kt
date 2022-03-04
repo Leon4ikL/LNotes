@@ -1,4 +1,4 @@
-package com.leon.feature_home_screen
+package com.leon.lnotes
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
