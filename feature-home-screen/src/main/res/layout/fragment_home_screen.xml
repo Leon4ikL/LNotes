@@ -4,43 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.HomeScreenFragment"
-    tools:background="#171C26">
+    tools:context=".api.HomeScreenFragment">
 
     <TextView
         android:id="@+id/homeScreenTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Notes"
+        android:text="@string/notes_title_home"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_margin="16dp"
-        tools:textColor="#FAFAFA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/search"
+        style="@style/SearchViewStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/search_background"
-        android:elevation="4dp"
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/homeScreenTitle">
 
-        <SearchView
+        <androidx.appcompat.widget.SearchView
             android:id="@+id/searchView"
+
+            style="@style/AppSearchViewStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:iconifiedByDefault="false"
-            android:searchIcon="@drawable/ic_baseline_search_24"
-
-            android:queryBackground="@android:color/transparent"
-            android:queryHint="Search your notes..."
-            android:layout_marginEnd="16dp"
+            app:queryHint="@string/hint_search"
+            app:iconifiedByDefault="false"
+            app:searchIcon="@drawable/ic_baseline_search_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/sortButton"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +59,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="16dp"
+        android:layout_margin="8dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

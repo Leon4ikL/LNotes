@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LNotes</string>
+    <string name="notes_title_home">Notes</string>
+    <string name="hint_search">Search your notes...</string>
+</resources>
