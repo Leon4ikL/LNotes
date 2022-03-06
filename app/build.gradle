@@ -35,6 +35,7 @@ android {
 dependencies {
 
     api project(":core-ui")
+    api project(":feature-home-screen")
 
     implementation libs.coreKtx
     implementation libs.appcompat
