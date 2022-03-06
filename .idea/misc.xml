@@ -4,6 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Projects/LNotes/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable-night/ic_add.xml" value="0.196" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable-night/ic_baseline_search_24.xml" value="0.196" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable-night/ic_baseline_sort_24.xml" value="0.196" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable-night/ic_notifications.xml" value="0.196" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable-night/search_background.xml" value="0.196" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable-night/sort.xml" value="0.196" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable/ic_add.xml" value="0.196" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable/ic_baseline_search_24.xml" value="0.196" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable/ic_baseline_sort_24.xml" value="0.196" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable/ic_notifications.xml" value="0.196" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable/search_background.xml" value="0.192" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable/search_corner.xml" value="0.196" />
+        <entry key="..\:/Android Projects/LNotes/core-ui/src/main/res/drawable/sort.xml" value="0.196" />
         <entry key="..\:/Android Projects/LNotes/feature-home-screen/src/main/res/drawable/ic_baseline_search_24.xml" value="0.194" />
         <entry key="..\:/Android Projects/LNotes/feature-home-screen/src/main/res/drawable/ic_baseline_sort_24.xml" value="0.1675" />
         <entry key="..\:/Android Projects/LNotes/feature-home-screen/src/main/res/drawable/search_background.xml" value="0.194" />

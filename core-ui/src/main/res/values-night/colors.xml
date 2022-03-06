@@ -4,4 +4,6 @@
     <color name="white">#FAFAFA</color>
     <color name="yellow">#FEB52B</color>
     <color name="blue">#3369ff</color>
+
+    <color name="searchBackground">#393939</color>
 </resources>

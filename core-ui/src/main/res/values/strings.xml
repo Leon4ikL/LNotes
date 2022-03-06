@@ -2,4 +2,7 @@
     <string name="app_name">LNotes</string>
     <string name="notes_title_home">Notes</string>
     <string name="hint_search">Search your notes...</string>
+    <string name="add_note">Add note</string>
+    <string name="sort_button">Sort button</string>
+    <string name="notification">Notification</string>
 </resources>
