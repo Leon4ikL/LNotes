@@ -8,10 +8,8 @@ import dagger.multibindings.IntoMap
 
 @Module
 internal interface ViewModelModule {
-
     @Binds
     @IntoMap
     @ViewModelKey(HomeScreenViewModel::class)
     fun bindHomeScreenViewModel(viewModel: HomeScreenViewModel): ViewModel
-
 }
