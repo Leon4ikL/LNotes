@@ -9,4 +9,5 @@ internal interface HomeScreenRepository {
 
     fun searchNotes(searchQuery: String): List<Note>
 
+    fun getListNotes(): List<Note>
 }

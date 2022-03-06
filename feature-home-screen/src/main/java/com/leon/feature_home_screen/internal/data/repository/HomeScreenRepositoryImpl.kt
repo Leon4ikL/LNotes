@@ -16,4 +16,8 @@ internal class HomeScreenRepositoryImpl @Inject constructor() : HomeScreenReposi
     override fun searchNotes(searchQuery: String): List<Note> {
         TODO("Not yet implemented")
     }
+
+    override fun getListNotes(): List<Note> {
+        TODO("Not yet implemented")
+    }
 }
