@@ -23,6 +23,6 @@ internal class HomeScreenRepositoryImpl @Inject constructor(
     }
 
     override fun getListNotes(): List<Note> {
-        return mapper.mapListEntityToListModel(mockData.invoke())
+        return mapper.map(mockData.invoke())
     }
 }

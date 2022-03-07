@@ -1,9 +1,9 @@
 package com.leon.feature_home_screen.internal.domain.model
 
-internal data class Note(
-    val id: Int,
-    val title: String,
-    val description: String,
-    val notification: Notification?,
+internal interface Note: ListItem{
+    override val id: Int
+    val title: String
+    val description: String?
     val label: Label?
-)
+    val notification: Notification?
+}
