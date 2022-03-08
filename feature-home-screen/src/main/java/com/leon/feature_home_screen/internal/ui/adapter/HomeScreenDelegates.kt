@@ -55,7 +55,6 @@ internal object HomeScreenDelegates {
                 if (item.label == null) {
                     binding.labelTextView.visibility = View.GONE
                 }
-
             }
         }
 
