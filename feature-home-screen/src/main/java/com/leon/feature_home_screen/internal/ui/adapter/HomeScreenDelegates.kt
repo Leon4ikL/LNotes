@@ -28,6 +28,8 @@ internal object HomeScreenDelegates {
                     }
                     if (item.label == null) {
                         labelTextView.visibility = View.GONE
+                    }else{
+                        binding.labelTextView.text = item.title
                     }
                 }
             }
@@ -54,6 +56,8 @@ internal object HomeScreenDelegates {
                 }
                 if (item.label == null) {
                     binding.labelTextView.visibility = View.GONE
+                }else{
+                    binding.labelTextView.text = item.title
                 }
             }
         }

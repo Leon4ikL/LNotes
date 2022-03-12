@@ -8,14 +8,15 @@ import dagger.Component
     modules = [
         ViewModelModule::class,
         DataModule::class
-    ]
+    ],
+    dependencies = [HomeScreenDeps::class]
 )
 internal interface HomeScreenComponent {
     fun inject(homeScreen: HomeScreenFragment)
-
-//    @Component.Factory
-//    interface Factory{
-//        fun deps(deps: HomeScreenDeps) : HomeScreenComponent
-//    }
+    @Component.Builder
+    interface Builder{
+        fun deps(deps: HomeScreenDeps) : Builder
+        fun build() : HomeScreenComponent
+    }
 }
 

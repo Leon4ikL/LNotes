@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="LNotes.app" target="11" />
+      <module name="LNotes.core-ui" target="11" />
+      <module name="LNotes.database" target="11" />
+      <module name="LNotes.feature-home-screen" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

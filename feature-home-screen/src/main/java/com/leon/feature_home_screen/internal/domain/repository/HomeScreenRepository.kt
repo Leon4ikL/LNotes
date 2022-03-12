@@ -7,7 +7,7 @@ internal interface HomeScreenRepository {
 
     fun openNoteUseCase(note: Note)
 
-    fun searchNotes(searchQuery: String): List<Note>
+    suspend fun searchNotes(searchQuery: String): List<Note>
 
-    fun getListNotes(): List<Note>
+    suspend fun getListNotes(): List<Note>
 }

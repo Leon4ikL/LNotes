@@ -37,6 +37,7 @@ android {
 dependencies {
 
     api project(":core-ui")
+    api project(":database")
 
     implementation libs.coreKtx
     implementation libs.appcompat
@@ -46,8 +47,10 @@ dependencies {
 
     implementation libs.coroutines
     implementation libs.dagger
+    implementation project(path: ':database')
     kapt libs.daggerCompiler
 
     implementation libs.adapterDelegates
     implementation libs.adapterDelegatesViewBinding
+
 }

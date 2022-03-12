@@ -11,12 +11,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.leon.feature_home_screen.databinding.FragmentHomeScreenBinding
-import com.leon.feature_home_screen.internal.di.HomeScreenComponent
 import com.leon.feature_home_screen.internal.di.HomeScreenComponentViewModel
 import com.leon.feature_home_screen.internal.ui.adapter.HomeScreenDelegates
-import com.leon.feature_home_screen.internal.domain.model.NoteItem
-import com.leon.feature_home_screen.internal.domain.model.NoteToDoItem
-import com.leon.feature_home_screen.internal.domain.model.ToDo
 import com.leon.feature_home_screen.internal.ui.viewmodel.HomeScreenViewModel
 import com.leon.feature_home_screen.internal.ui.viewmodel.ViewModelFactory
 import javax.inject.Inject
@@ -24,7 +20,15 @@ import javax.inject.Inject
 
 class HomeScreenFragment : Fragment() {
 
+    @Inject
+    internal lateinit var viewModelFactory: ViewModelFactory
+
+    private val viewModel by lazy {
+        ViewModelProvider(this, viewModelFactory)[HomeScreenViewModel::class.java]
+    }
+
     private var _binding: FragmentHomeScreenBinding? = null
+
     private val binding: FragmentHomeScreenBinding
         get() = _binding ?: throw RuntimeException("FragmentHomeScreenBinding == null")
 
@@ -33,20 +37,9 @@ class HomeScreenFragment : Fragment() {
         HomeScreenDelegates.noteItemDelegate()
     )
 
-    @Inject
-    internal lateinit var viewModelFactory: ViewModelFactory
-
-    private val viewModel by lazy{
-        ViewModelProvider(this, viewModelFactory)[HomeScreenViewModel::class.java]
-    }
-
-    private val viewModelComponent by lazy {
-        ViewModelProvider(this)[HomeScreenComponentViewModel::class.java]
-    }
-
-
     override fun onAttach(context: Context) {
-        viewModelComponent.newHomeScreenComponent.inject(this)
+        ViewModelProvider(this).get<HomeScreenComponentViewModel>()
+            .newHomeScreenComponent.inject(this)
         super.onAttach(context)
     }
 
@@ -55,17 +48,16 @@ class HomeScreenFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeScreenBinding.inflate(inflater,container,false)
+        _binding = FragmentHomeScreenBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val list = viewModel.getList()
-        Log.e("View",list.toString())
-        with(binding){
+        Log.e("View", list.toString())
+        with(binding) {
             recyclerView.adapter = adapter
-
             adapter.apply {
                 items = list
                 notifyDataSetChanged()

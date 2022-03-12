@@ -16,3 +16,5 @@ rootProject.name = "LNotes"
 include ':app'
 include ':feature-home-screen'
 include ':core-ui'
+include ':database'
+include ':common'

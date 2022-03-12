@@ -7,7 +7,7 @@ import javax.inject.Inject
 internal class GetListNotesUseCase @Inject constructor(
     private val repository: HomeScreenRepository
 ) {
-    operator fun invoke(): List<Note>{
+    suspend operator fun invoke(): List<Note>{
         return repository.getListNotes()
     }
 }

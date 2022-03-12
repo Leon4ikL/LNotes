@@ -5,7 +5,7 @@ import com.leon.feature_home_screen.internal.domain.repository.HomeScreenReposit
 import javax.inject.Inject
 
 internal class SearchNotesUseCase @Inject constructor(private val repository: HomeScreenRepository) {
-    operator fun invoke(searchQuery: String) : List<Note>{
+    suspend operator fun invoke(searchQuery: String) : List<Note>{
         return repository.searchNotes(searchQuery)
     }
 }
