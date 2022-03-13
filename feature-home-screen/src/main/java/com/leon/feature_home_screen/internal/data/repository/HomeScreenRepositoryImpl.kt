@@ -4,6 +4,7 @@ import com.leon.feature_home_screen.internal.data.mapper.NoteMapper
 import com.leon.feature_home_screen.internal.domain.model.Note
 import com.leon.feature_home_screen.internal.domain.repository.HomeScreenRepository
 import com.leon.lnotes.database.NoteDao
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 internal class HomeScreenRepositoryImpl @Inject constructor(
@@ -18,11 +19,11 @@ internal class HomeScreenRepositoryImpl @Inject constructor(
         TODO("Not yet implemented")
     }
 
-    override suspend fun searchNotes(searchQuery: String): List<Note> {
+    override fun searchNotes(searchQuery: String): Flow<List<Note>> {
         TODO("Not yet implemented")
     }
 
-    override suspend fun getListNotes(): List<Note> {
+    override fun getListNotes(): Flow<List<Note>> {
         val notes = noteDao.getAllNote()
         return mapper.map(notes)
     }

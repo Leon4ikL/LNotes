@@ -4,25 +4,32 @@ import android.app.Application
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.leon.lnotes.database.entity.NoteEntity
-import kotlinx.coroutines.internal.synchronized
+import com.leon.lnotes.database.entity.LabelDbEntity
+import com.leon.lnotes.database.entity.NoteDbEntity
 
-@Database(entities = [NoteEntity::class], version = 1, exportSchema = false)
+@Database(
+    entities = [
+        NoteDbEntity::class,
+        LabelDbEntity::class
+    ],
+    version = 1,
+    exportSchema = false
+)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun noteListDao(): NoteDao
-
-    companion object{
+    abstract fun labelListDao(): LabelDao
+    companion object {
 
         private var INSTANCE: AppDatabase? = null
         private val LOOK = Any()
         private const val DB_NAME = "note.db"
 
-        fun getInstance(application: Application): AppDatabase{
+        fun getInstance(application: Application): AppDatabase {
             INSTANCE?.let {
                 return it
             }
-            kotlin.synchronized(LOOK){
+            synchronized(LOOK) {
                 INSTANCE?.let {
                     return it
                 }

@@ -2,6 +2,7 @@ package com.leon.lnotes.di
 
 import android.app.Application
 import com.leon.feature_home_screen.api.HomeScreenDeps
+import com.leon.lnotes.database.LabelDao
 import com.leon.lnotes.database.NoteDao
 import dagger.BindsInstance
 import dagger.Component
@@ -10,6 +11,7 @@ import dagger.Component
 interface AppComponent : HomeScreenDeps {
 
     override val noteDao: NoteDao
+    override val labelDao: LabelDao
 
     @Component.Builder
     interface Builder {

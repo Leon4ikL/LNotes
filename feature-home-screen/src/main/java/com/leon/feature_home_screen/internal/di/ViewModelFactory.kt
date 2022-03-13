@@ -1,4 +1,4 @@
-package com.leon.feature_home_screen.internal.ui.viewmodel
+package com.leon.feature_home_screen.internal.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
