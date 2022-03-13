@@ -14,10 +14,7 @@ import com.leon.feature_home_screen.internal.domain.usecase.OpenNoteUseCase
 import com.leon.feature_home_screen.internal.domain.usecase.SearchNotesUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import kotlin.coroutines.coroutineContext
@@ -33,20 +30,10 @@ internal class HomeScreenViewModel @Inject constructor(
     val notes: StateFlow<List<Note>> = _notes.asStateFlow()
 
     init {
-        getAllNotes()
-    }
-
-    fun getAllNotes(){
-        viewModelScope.launch(Dispatchers.IO) {
-            getListNotesUseCase.invoke().collect {
-                _notes.value = it
-                Log.e("Flow", it.toString())
-            }
+        viewModelScope.launch {
+            _notes.emitAll(getListNotesUseCase())
         }
     }
-
-
-
 
 
 }

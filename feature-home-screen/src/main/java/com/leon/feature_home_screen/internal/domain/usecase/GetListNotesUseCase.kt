@@ -8,7 +8,7 @@ import javax.inject.Inject
 internal class GetListNotesUseCase @Inject constructor(
     private val repository: HomeScreenRepository
 ) {
-    suspend operator fun invoke(): Flow<List<Note>> {
+    operator fun invoke(): Flow<List<Note>> {
         return repository.getListNotes()
     }
 }

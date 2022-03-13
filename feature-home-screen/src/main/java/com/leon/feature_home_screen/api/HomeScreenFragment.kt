@@ -2,24 +2,20 @@ package com.leon.feature_home_screen.api
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
 import androidx.lifecycle.lifecycleScope
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import com.leon.feature_home_screen.databinding.FragmentHomeScreenBinding
 import com.leon.feature_home_screen.internal.di.HomeScreenComponentViewModel
+import com.leon.feature_home_screen.internal.di.ViewModelFactory
 import com.leon.feature_home_screen.internal.ui.adapter.HomeScreenDelegates
 import com.leon.feature_home_screen.internal.ui.viewmodel.HomeScreenViewModel
-import com.leon.feature_home_screen.internal.di.ViewModelFactory
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.observeOn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
@@ -75,7 +71,6 @@ class HomeScreenFragment : Fragment() {
                 }
             }.collect()
         }
-
 
 
     }
